@@ -97,4 +97,4 @@ Deploy `dist/` to Vercel.
 Fork the repo, create a feature branch, and submit a PR. Follow ESLint rules.
 
 ## License
-MIT License. Created by Min2 Yadav.
+MIT License. Created by Min2 Yadav and Jayant Kr. Jha. 
