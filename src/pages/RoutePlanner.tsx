@@ -154,7 +154,7 @@ const RoutePlanner = () => {
               onClick={() => window.open('https://hackathon-gemba.streamlit.app/Vehicle_Routing', '_blank')}
             >
               <Clock className="w-4 h-4 sm:mr-1" />
-              <span className="hidden sm:inline">Scheduler</span>
+              <span className="hidden sm:inline">Operation Planner</span>
             </Button>
             <Button variant="outline" size="sm" onClick={handleReset}>
               <RotateCcw className="w-4 h-4 sm:mr-1" />
