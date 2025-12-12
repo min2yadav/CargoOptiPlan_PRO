@@ -21,7 +21,7 @@ interface MockUser {
   created_at: string;
 }
 
-// Mock users for demo until database is set up
+// Mock users for demo 
 const MOCK_USERS: MockUser[] = [
   { id: '1', email: 'admin@cargoopt.com', full_name: 'Admin User', role: 'admin', created_at: '2024-01-15' },
   { id: '2', email: 'sales@cargoopt.com', full_name: 'Sales Team', role: 'sales', created_at: '2024-02-20' },

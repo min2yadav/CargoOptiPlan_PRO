@@ -127,13 +127,6 @@ const HELP_SECTIONS: HelpSection[] = [
 3. Assign appropriate roles
 4. Edit or remove users as needed
 
-**Role Permissions:**
-- **Admin**: Full access to everything
-- **Sales**: Create jobs, generate quotes, share with clients
-- **Operations**: View/edit all jobs, assign vehicles
-- **Warehouse**: View packing, mark items loaded
-- **Driver**: View routes, mark deliveries
-- **Customer**: View shared job details
 
 **Company Settings:**
 - Manage pricing and cost margins
@@ -141,27 +134,7 @@ const HELP_SECTIONS: HelpSection[] = [
 - Configure system preferences`,
     roles: ['admin'],
   },
-  {
-    id: 'client-sharing',
-    title: 'Sharing with Clients',
-    content: `**Creating Share Links:**
-1. Open the job you want to share
-2. Click "Share with Client"
-3. Copy the generated link
-4. Send to your customer
-
-**What Clients See:**
-- 3D packing visualization
-- Route map with delivery locations
-- Estimated arrival times
-- No pricing or cost information
-
-**Link Security:**
-- Each link is unique and secure
-- Links can be revoked if needed
-- Clients don't need to log in`,
-    roles: ['admin', 'sales'],
-  },
+ 
 ];
 
 export default function Help() {
