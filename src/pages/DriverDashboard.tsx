@@ -147,7 +147,7 @@ export default function DriverDashboard() {
             <Button 
               variant="outline" 
               size="sm"
-              onClick={() => window.open('https://docs.google.com/document/d/1QkROzzUbfVVzLySJXSO1FA-l1e8grb4__6RfiIzRUy0/edit?usp=sharing', '_blank')}
+              onClick={() => window.open('https://hackathon-gemba.streamlit.app/Vehicle_Routing', '_blank')}
             >
               <Calendar className="w-4 h-4 mr-1" />
               <span className="hidden sm:inline">Schedule</span>
