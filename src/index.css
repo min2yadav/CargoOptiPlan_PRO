@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 220 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 80% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 220 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 80% 50%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(220 80% 50%), hsl(220 80% 40%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(220 80% 50% / 0.08), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(220 80% 50% / 0.15);
+    --shadow-card: 0 2px 12px hsl(220 13% 10% / 0.08);
+    --shadow-elevated: 0 8px 32px hsl(220 13% 10% / 0.12);
+
+    /* Item type colors */
+    --item-pallet: 30 59% 45%;
+    --item-crate: 25 95% 55%;
+    --item-drum: 0 0% 50%;
+    --item-box: 43 89% 55%;
+    --item-bag: 270 60% 55%;
+    --item-stand: 0 0% 25%;
+    --item-tray: 340 82% 60%;
+    --item-default: 220 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card border border-border rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-text {
+    @apply text-primary font-bold;
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl p-6 border border-border bg-card;
+    box-shadow: var(--shadow-card);
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: var(--gradient-glow);
+  }
+
+  .stat-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .input-field {
+    @apply bg-background border-border text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200;
+  }
+
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground font-semibold shadow-lg transition-all duration-200;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-primary:hover {
+    @apply scale-[1.02] brightness-110;
+    box-shadow: 0 0 60px hsl(var(--primary) / 0.2);
+  }
+
+  .table-row {
+    @apply border-b border-border hover:bg-muted/50 transition-colors duration-150;
+  }
+
+  .visualization-container {
+    @apply relative rounded-xl overflow-hidden border border-border bg-muted/30;
+  }
+
+  .legend-item {
+    @apply flex items-center gap-2 text-sm text-muted-foreground;
+  }
+
+  .legend-dot {
+    @apply w-3 h-3 rounded-full flex-shrink-0;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+    }
+  }
+}
